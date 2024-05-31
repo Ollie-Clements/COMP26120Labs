@@ -1,0 +1,8 @@
+package uk.ac.man.cs.eventlite.dao;
+import uk.ac.mac.cs.eventlite
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface EventRepository extends CrudRepository<Event, Long> {
+
+}

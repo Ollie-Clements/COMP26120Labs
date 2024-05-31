@@ -1,0 +1,14 @@
+package uk.ac.man.cs.eventlite.config;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class InitialDataLoaderTest {
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}

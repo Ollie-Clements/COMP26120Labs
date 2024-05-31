@@ -1,0 +1,101 @@
+package uk.ac.man.cs.eventlite.config.data;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.Month;
+import java.util.List;
+import java.util.Optional;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import uk.ac.man.cs.eventlite.dao.EventService;
+import uk.ac.man.cs.eventlite.dao.VenueService;
+import uk.ac.man.cs.eventlite.entities.Event;
+import uk.ac.man.cs.eventlite.entities.Venue;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@ActiveProfiles("test")
+public class InitialDataLoaderTest {
+
+@Autowired
+private EventService eventService;
+
+@Autowired
+private VenueService venueService;
+
+private InitialDataLoader initialDataLoader;
+
+@Before
+public void setUp() {
+initialDataLoader = new InitialDataLoader();
+initialDataLoader.eventService = eventService;
+initialDataLoader.venueService = venueService;
+}
+
+@Test
+public void testInitDatabase() {
+// Test venue initialization.
+initialDataLoader.initDatabase().run();
+
+List<Venue> venues = venueService.findAll();
+assertNotNull(venues);
+assertEquals(3, venues.size());
+
+Venue testVenue = venues.get(0);
+assertEquals("Venue A", testVenue.getName());
+assertEquals("23 Manchester Road", testVenue.getAddress());
+assertEquals("E14 3BD", testVenue.getPostcode());
+assertEquals(50, testVenue.getCapacity());
+
+Venue testVenue2 = venues.get(1);
+assertEquals("Venue B", testVenue2.getName());
+assertEquals("Highland Road", testVenue2.getAddress());
+assertEquals("S43 2EZ", testVenue2.getPostcode());
+assertEquals(1000, testVenue2.getCapacity());
+
+Venue testVenue3 = venues.get(2);
+assertEquals("Venue C", testVenue3.getName());
+assertEquals("19 Acacia Avenue", testVenue3.getAddress());
+assertEquals("WA15 8QY", testVenue3.getPostcode());
+assertEquals(10, testVenue3.getCapacity());
+
+// Test event initialization.
+initialDataLoader.initDatabase().run();
+
+List<Event> events = eventService.findAll();
+assertNotNull(events);
+assertEquals(6, events.size());
+
+Event event1 = events.get(0);
+assertEquals("Event Alpha", event1.getName());
+assertEquals(LocalDate.of(2023, Month.JULY, 11), event1.getDate());
+assertEquals(LocalTime.parse("12:30"), event1.getTime());
+assertEquals(testVenue2, event1.getVenue());
+
+Event event2 = events.get(1);
+assertEquals("Event Beta", event2.getName());
+assertEquals(LocalDate.of(2023, Month.JULY, 11), event2.getDate());
+assertEquals(LocalTime.parse("10:00"), event2.getTime());
+assertEquals(testVenue, event2.getVenue());
+
+Event event3 = events.get(2);
+assertEquals("Event Apple", event3.getName());
+assertEquals(LocalDate.of(2023, Month.JULY, 12), event3.getDate());
+assertEquals(LocalTime.parse("12:00"), event3.getTime());
+assertEquals(testVenue, event3.getVenue());
+
+Event event4 = events.get(3);
+assertEquals("Event Former", event4.getName());
+assertEquals(LocalDate.of(2023, Month.JAN

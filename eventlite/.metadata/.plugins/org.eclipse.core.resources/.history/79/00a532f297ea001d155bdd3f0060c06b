@@ -1,0 +1,147 @@
+package uk.ac.man.cs.eventlite.entities;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+// import forward geocoding from MapBoxAPI
+import com.mapbox.api.geocoding.v5.MapboxGeocoding;
+import com.mapbox.api.geocoding.v5.models.CarmenFeature;
+
+@Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) 
+@Table(name = "venues")
+public class Venue {
+	
+	@Id
+	@GeneratedValue
+	private long id;
+	
+	@OneToOne
+	private Event event;
+
+	public String name;
+
+//	@OneToMany(mappedBy = "venue", cascade = CascadeType.ALL, orphanRemoval = true)
+//	@JsonBackReference
+//	private List<Event> events = new ArrayList<>();
+	
+//	private long count;
+	
+	// MapBox coordinates
+	private float latitude;
+
+	private float longitude;
+
+	public String address;
+	
+	public String postcode;
+
+	private String MapBoxApiToken = "pk.eyJ1Ijoicm9iZXJ0LWNoaXJ1LWV2ZW50bGl0ZSIsImEiOiJjbGZjZTY2ZzMzOWhyM3ByMDNndXd4d2tmIn0.Ifgnls-MHKhs4zYaqfwjrw"; 
+	
+	public int capacity;	
+	
+	public Venue() {
+		
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public int getCapacity() {
+		return capacity;
+	}
+
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
+	}
+
+	public float getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(float latitude) {
+		this.latitude = latitude;
+	}
+
+	public float getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(float longitude) {
+		this.longitude = longitude;
+	}
+
+	public List<Event> getEvents() {
+		return events;
+	}
+
+	public void setEvents(List<Event> events) {
+		this.events = events;
+	}
+
+	public void addEvent(Event event) {
+		events.add(event);
+		event.setVenue(this);
+	}
+	
+	public String getPostcode() {
+		return postcode;
+	} 
+	
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
+	}
+
+	// forward geocoding - MapBox API - takes address and returns coordinates
+	public void setLongitudeLatitude() throws IOException {
+		MapboxGeocoding client = MapboxGeocoding.builder()
+				.accessToken(MapBoxApiToken)
+				.query(address + ", " + postcode)
+				.build();
+		
+		CarmenFeature feature = client.executeCall().body().features().get(0);
+
+		// get coordinater from carmenfeature
+		double longitude = (float) feature.center().longitude();
+		double latitude = (float) feature.center().latitude();
+
+		// set coordinates
+		setLongitude((float) longitude);
+		setLatitude((float) latitude);
+		System.out.println("Set latitude and longitude");
+		System.out.println(getLatitude());
+		System.out.println(getLongitude());
+	}
+}

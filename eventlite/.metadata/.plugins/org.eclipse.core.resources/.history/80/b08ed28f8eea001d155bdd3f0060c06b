@@ -1,0 +1,125 @@
+package uk.ac.man.cs.eventlite.config.data;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.Month;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
+
+import uk.ac.man.cs.eventlite.dao.EventService;
+import uk.ac.man.cs.eventlite.dao.VenueService;
+import uk.ac.man.cs.eventlite.entities.Event;
+import uk.ac.man.cs.eventlite.entities.Venue;
+
+
+@Configuration
+@Profile("default")
+public class InitialDataLoader {
+
+	private final static Logger log = LoggerFactory.getLogger(InitialDataLoader.class);
+
+	@Autowired
+	private EventService eventService;
+
+	@Autowired
+	private VenueService venueService;
+	
+
+	private Venue createVenue(String name, String address, String postcode, int capacity) {
+		Venue venue = new Venue();
+		venue.setName(name);
+		venue.setAddress(address);
+		venue.setPostcode(postcode);
+		venue.setCapacity(capacity);
+		return venue;
+  }
+
+
+  private Event createEvent(String name, LocalDate localDate, LocalTime localTime,  Venue testVenue, String description) {
+    Event event = new Event();
+    event.setName(name);
+    event.setDate(localDate);
+    event.setDescription(description);
+    event.setTime(localTime);
+    event.setVenue(testVenue);
+    return event;
+  }
+
+	@Bean
+	CommandLineRunner initDatabase() {
+		return args -> {
+				// eventService.deleteAll();
+//				venueService.deleteAll();
+			if (venueService.count() > 0) {
+				log.info("Database already populated with venues. Skipping venue initialization.");
+			} else {
+				// Build and save initial venues here.
+
+				Venue testVenue = createVenue("Venue A", "23 Manchester Road", "E14 3BD", 50);
+				Venue testVenue2 = createVenue("Venue B", "Highland Road", "S43 2EZ", 1000);
+				Venue testVenue3 = createVenue("Venue C", "19 Acacia Avenue", "WA15 8QY", 10);
+//				Venue testVenue4 = createVenue("Venue 4", "Trafford Park, Manchester", 1234);
+//				
+				testVenue.setLongitudeLatitude();
+				testVenue2.setLongitudeLatitude();
+				testVenue3.setLongitudeLatitude()
+//				testVenue3.setLongitudeLatitude(testVenue3.getAddress());
+//				testVenue4.setLongitudeLatitude(testVenue4.getAddress());
+				log.info("Venue 1: " + testVenue.getLatitude() + " " + testVenue.getLongitude());
+				log.info("Venue 2: " + testVenue2.getLatitude() + " " + testVenue2.getLongitude());
+				log.info("Venue 3: " + testVenue3.getLatitude() + " " + testVenue3.getLongitude());
+//				log.info("Venue 4: " + testVenue4.getLatitude() + " " + testVenue4.getLongitude());
+				venueService.save(testVenue);
+				venueService.save(testVenue2);
+				venueService.save(testVenue3);
+//				venueService.delete(testVenue3);
+//				venueService.save(testVenue4);
+
+			}
+
+			if (eventService.count() > 0) {
+				log.info("Database already populated with events. Skipping event initialization.");
+			} else {
+				// Build and save initial events here.
+				log.info("Made it to event initialization.");
+				Venue testVenue = venueService.findById(1L).get();
+				Venue testVenue2 = venueService.findById(2L).get();
+				Venue testVenue3 = venueService.findById(3L).get();
+//				Venue testVenue4 = venueService.findById(4L).get();
+				log.info("Venue 1: " + testVenue.getName());
+				log.info("Venue 2: " + testVenue2.getName());
+				log.info("Venue 3: " + testVenue3.getName());
+//				log.info("Venue 4: " + testVenue4.getName());
+				
+				Event event1 = createEvent("Event Alpha",LocalDate.of(2023,Month.JULY,11),LocalTime.parse("12:30"),testVenue2,null);
+				log.info("Made it past the first event.");
+				Event event2 = createEvent("Event Beta",LocalDate.of(2023,Month.JULY,11),LocalTime.parse("10:00"),testVenue,null);
+				Event event3 = createEvent("Event Apple",LocalDate.of(2023,Month.JULY,12),LocalTime.parse("12:00"),testVenue,null);
+				Event event4 = createEvent("Event Former",LocalDate.of(2023,Month.JANUARY,11),LocalTime.parse("11:00"),testVenue2,null);
+				Event event5 = createEvent("Event Previous",LocalDate.of(2023,Month.JANUARY,11),LocalTime.parse("18:30"),testVenue,null);
+				Event event6 = createEvent("Event Past",LocalDate.of(2023,Month.JANUARY,10),LocalTime.parse("17:00"),testVenue,null);
+//				Event event7 = createEvent("Event 7",LocalDate.of(2023,Month.JANUARY,4),LocalTime.parse("12:03"),testVenue,null);
+//				Event event8 = createEvent("Event 8",LocalDate.of(2023,Month.JANUARY,6),LocalTime.parse("12:05"),testVenue2,null);
+//		//		Event event9 = createEvent("Event 9",LocalDate.of(2023,Month.JANUARY,8),LocalTime.parse("12:07"),testVenue3,null);
+//				Event event10 = createEvent("Event 10",LocalDate.of(2023,Month.JANUARY,10),LocalTime.parse("12:09"),testVenue4,null);
+				
+				log.info("Made it to the bit before saving events.");
+				
+				// intialize a list with all events in constructor
+				List<Event> eventsList = new ArrayList<Event>(Arrays.asList(event1, event2, event3, event4, event5, event6));
+
+				eventService.saveAll(eventsList);
+				log.info("Made it to the end of event initialization.");
+			}
+		};
+	}
+}

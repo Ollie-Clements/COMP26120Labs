@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel" value="0"/>
+	<item key="ResetTargetSelectionDialog.resetType" value="MIXED"/>
+	<list key="EGit.KnownHosts">
+		<item value="bitbucket.org"/>
+		<item value="github.com"/>
+		<item value="git.eclipse.org"/>
+		<item value="gitlab.cs.man.ac.uk"/>
+	</list>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://gitlab.cs.man.ac.uk/comp23412_2022/eventlite_Mon18.git"/>
+	</list>
+	<list key="CommitDialog.authorValues">
+		<item value="Oliver Clements &lt;oliver.clements-2@student.manchester.ac.uk&gt;"/>
+	</list>
+	<list key="CommitDialog.committerValues">
+		<item value="Oliver Clements &lt;oliver.clements-2@student.manchester.ac.uk&gt;"/>
+	</list>
+	<section name="GitImportWizard">
+		<item key="GitProjectsImportPage.STORE_NESTED_PROJECTS" value="true"/>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
+		<item key="HORIZONTAL_SASH_FORM_WEIGHT" value="500,500"/>
+		<item key="STAGING_SASH_FORM_WEIGHT" value="500,500"/>
+		<item key="sortItemState" value="false"/>
+	</section>
+	<section name="GitCommitMessageComponent">
+	</section>
+	<section name="org.eclipse.egit.ui.internal.push.PushResultDialog.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="599"/>
+		<item key="DIALOG_Y_ORIGIN" value="217"/>
+		<item key="DIALOG_WIDTH" value="656"/>
+		<item key="DIALOG_HEIGHT" value="458"/>
+		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
+		<list key="sashWeights">
+			<item value="600"/>
+			<item value="400"/>
+		</list>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.dialogs.CheckoutDialog.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="621"/>
+		<item key="DIALOG_Y_ORIGIN" value="198"/>
+		<item key="DIALOG_WIDTH" value="613"/>
+		<item key="DIALOG_HEIGHT" value="487"/>
+		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.dialogs.MergeTargetSelectionDialog.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="587"/>
+		<item key="DIALOG_Y_ORIGIN" value="67"/>
+		<item key="DIALOG_WIDTH" value="680"/>
+		<item key="DIALOG_HEIGHT" value="683"/>
+		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.merge.MergeResultDialog.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="536"/>
+		<item key="DIALOG_Y_ORIGIN" value="370"/>
+		<item key="DIALOG_WIDTH" value="782"/>
+		<item key="DIALOG_HEIGHT" value="229"/>
+		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.pull.PullResultDialog.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="552"/>
+		<item key="DIALOG_Y_ORIGIN" value="322"/>
+		<item key="DIALOG_WIDTH" value="751"/>
+		<item key="DIALOG_HEIGHT" value="301"/>
+		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.dialogs.ResetTargetSelectionDialog.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="621"/>
+		<item key="DIALOG_Y_ORIGIN" value="32"/>
+		<item key="DIALOG_WIDTH" value="613"/>
+		<item key="DIALOG_HEIGHT" value="735"/>
+		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
+	</section>
+</section>

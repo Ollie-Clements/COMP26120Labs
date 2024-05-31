@@ -1,0 +1,153 @@
+!SESSION 2023-05-03 10:15:07.095 -----------------------------------------------
+eclipse.buildId=4.15.0.I20200305-0155
+java.version=11.0.18
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_GB
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.core 4 0 2023-05-03 10:18:44.621
+!MESSAGE Pulling 1 repository
+!SUBENTRY 1 org.eclipse.egit.core 4 0 2023-05-03 10:18:44.622
+!MESSAGE Remote origin did not advertise Ref for branch testing_Ollie. This Ref may not exist in the remote or may be hidden by permission settings.
+!STACK 0
+org.eclipse.jgit.api.errors.RefNotAdvertisedException: Remote origin did not advertise Ref for branch testing_Ollie. This Ref may not exist in the remote or may be hidden by permission settings.
+	at org.eclipse.jgit.api.PullCommand.call(PullCommand.java:291)
+	at org.eclipse.egit.core.op.PullOperation$PullJob.run(PullOperation.java:256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.core 4 0 2023-05-03 10:18:51.299
+!MESSAGE Pulling 1 repository
+!SUBENTRY 1 org.eclipse.egit.core 4 0 2023-05-03 10:18:51.300
+!MESSAGE Remote origin did not advertise Ref for branch testing_Ollie. This Ref may not exist in the remote or may be hidden by permission settings.
+!STACK 0
+org.eclipse.jgit.api.errors.RefNotAdvertisedException: Remote origin did not advertise Ref for branch testing_Ollie. This Ref may not exist in the remote or may be hidden by permission settings.
+	at org.eclipse.jgit.api.PullCommand.call(PullCommand.java:291)
+	at org.eclipse.egit.core.op.PullOperation$PullJob.run(PullOperation.java:256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2023-05-04 10:58:48.511 -----------------------------------------------
+eclipse.buildId=4.15.0.I20200305-0155
+java.version=11.0.18
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_GB
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.core 4 0 2023-05-04 11:25:50.914
+!MESSAGE Pulling 1 repository
+!SUBENTRY 1 org.eclipse.egit.core 4 0 2023-05-04 11:25:50.914
+!MESSAGE Checkout conflict with files: 
+src/main/java/uk/ac/man/cs/eventlite/controllers/EventsControllerApi.java
+!STACK 0
+org.eclipse.jgit.api.errors.CheckoutConflictException: Checkout conflict with files: 
+src/main/java/uk/ac/man/cs/eventlite/controllers/EventsControllerApi.java
+	at org.eclipse.jgit.api.MergeCommand.call(MergeCommand.java:401)
+	at org.eclipse.jgit.api.PullCommand.call(PullCommand.java:367)
+	at org.eclipse.egit.core.op.PullOperation$PullJob.run(PullOperation.java:256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.jgit.errors.CheckoutConflictException: Checkout conflict with files: 
+src/main/java/uk/ac/man/cs/eventlite/controllers/EventsControllerApi.java
+	at org.eclipse.jgit.dircache.DirCacheCheckout.doCheckout(DirCacheCheckout.java:502)
+	at org.eclipse.jgit.dircache.DirCacheCheckout.checkout(DirCacheCheckout.java:467)
+	at org.eclipse.jgit.api.MergeCommand.call(MergeCommand.java:271)
+	... 3 more
+
+!ENTRY org.eclipse.egit.core 4 0 2023-05-04 11:29:57.066
+!MESSAGE Pulling 1 repository
+!SUBENTRY 1 org.eclipse.egit.core 4 0 2023-05-04 11:29:57.066
+!MESSAGE Checkout conflict with files: 
+src/main/java/uk/ac/man/cs/eventlite/controllers/EventsControllerApi.java
+!STACK 0
+org.eclipse.jgit.api.errors.CheckoutConflictException: Checkout conflict with files: 
+src/main/java/uk/ac/man/cs/eventlite/controllers/EventsControllerApi.java
+	at org.eclipse.jgit.api.MergeCommand.call(MergeCommand.java:401)
+	at org.eclipse.jgit.api.PullCommand.call(PullCommand.java:367)
+	at org.eclipse.egit.core.op.PullOperation$PullJob.run(PullOperation.java:256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.jgit.errors.CheckoutConflictException: Checkout conflict with files: 
+src/main/java/uk/ac/man/cs/eventlite/controllers/EventsControllerApi.java
+	at org.eclipse.jgit.dircache.DirCacheCheckout.doCheckout(DirCacheCheckout.java:502)
+	at org.eclipse.jgit.dircache.DirCacheCheckout.checkout(DirCacheCheckout.java:467)
+	at org.eclipse.jgit.api.MergeCommand.call(MergeCommand.java:271)
+	... 3 more
+
+!ENTRY org.eclipse.egit.core 4 0 2023-05-04 15:36:44.699
+!MESSAGE Pulling 1 repository
+!SUBENTRY 1 org.eclipse.egit.core 4 0 2023-05-04 15:36:44.699
+!MESSAGE Checkout conflict with files: 
+src/main/java/uk/ac/man/cs/eventlite/controllers/EventsControllerApi.java
+!STACK 0
+org.eclipse.jgit.api.errors.CheckoutConflictException: Checkout conflict with files: 
+src/main/java/uk/ac/man/cs/eventlite/controllers/EventsControllerApi.java
+	at org.eclipse.jgit.api.MergeCommand.call(MergeCommand.java:401)
+	at org.eclipse.jgit.api.PullCommand.call(PullCommand.java:367)
+	at org.eclipse.egit.core.op.PullOperation$PullJob.run(PullOperation.java:256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.jgit.errors.CheckoutConflictException: Checkout conflict with files: 
+src/main/java/uk/ac/man/cs/eventlite/controllers/EventsControllerApi.java
+	at org.eclipse.jgit.dircache.DirCacheCheckout.doCheckout(DirCacheCheckout.java:502)
+	at org.eclipse.jgit.dircache.DirCacheCheckout.checkout(DirCacheCheckout.java:467)
+	at org.eclipse.jgit.api.MergeCommand.call(MergeCommand.java:271)
+	... 3 more
+!SESSION 2023-05-05 13:04:12.874 -----------------------------------------------
+eclipse.buildId=4.15.0.I20200305-0155
+java.version=11.0.18
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_GB
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.ui 4 0 2023-05-05 14:09:54.134
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4723)
+	at org.eclipse.swt.SWT.error(SWT.java:4638)
+	at org.eclipse.swt.SWT.error(SWT.java:4609)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:550)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:470)
+	at org.eclipse.swt.widgets.Control.setFocus(Control.java:5301)
+	at org.eclipse.jdt.internal.ui.text.java.hover.AbstractAnnotationHover$AnnotationInformationControl.setFocus(AbstractAnnotationHover.java:214)
+	at org.eclipse.jface.text.AbstractInformationControlManager.showInformationControl(AbstractInformationControlManager.java:1246)
+	at org.eclipse.jface.internal.text.StickyHoverManager.showInformationControl(StickyHoverManager.java:262)
+	at org.eclipse.jface.internal.text.InformationControlReplacer.showInformationControl(InformationControlReplacer.java:164)
+	at org.eclipse.jface.text.AbstractInformationControlManager.internalShowInformationControl(AbstractInformationControlManager.java:1134)
+	at org.eclipse.jface.text.AbstractInformationControlManager.presentInformation(AbstractInformationControlManager.java:1120)
+	at org.eclipse.jface.text.AbstractInformationControlManager.setInformation(AbstractInformationControlManager.java:431)
+	at org.eclipse.jface.internal.text.InformationControlReplacer.computeInformation(InformationControlReplacer.java:116)
+	at org.eclipse.jface.text.AbstractInformationControlManager.doShowInformation(AbstractInformationControlManager.java:1101)
+	at org.eclipse.jface.text.AbstractInformationControlManager.showInformation(AbstractInformationControlManager.java:1091)
+	at org.eclipse.jface.internal.text.InformationControlReplacer.replaceInformationControl(InformationControlReplacer.java:103)
+	at org.eclipse.jface.text.AbstractInformationControlManager.replaceInformationControl(AbstractInformationControlManager.java:1268)
+	at org.eclipse.jface.text.AbstractHoverInformationControlManager.replaceInformationControl(AbstractHoverInformationControlManager.java:794)
+	at org.eclipse.jface.text.TextViewerHoverManager.replaceInformationControl(TextViewerHoverManager.java:297)
+	at org.eclipse.jface.text.AbstractHoverInformationControlManager$Closer.lambda$1(AbstractHoverInformationControlManager.java:296)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4930)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4451)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:658)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:557)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1447)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1420)
+
+!ENTRY org.eclipse.debug.core 4 5012 2023-05-05 14:38:56.606
+!MESSAGE Launch configuration EventLite run at file:/home/e11226oc/git/eventlite_Mon18/launchers/EventLite%20run.launch does not exist.

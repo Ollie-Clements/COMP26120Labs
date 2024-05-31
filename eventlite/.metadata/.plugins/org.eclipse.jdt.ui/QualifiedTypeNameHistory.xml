@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.sun.tools.javac.code.Attribute.Array"/>
+    <fullyQualifiedTypeName name="java.util.Optional"/>
+    <fullyQualifiedTypeName name="uk.ac.man.cs.eventlite.dao.EventService"/>
+    <fullyQualifiedTypeName name="uk.ac.man.cs.eventlite.assemblers.EventModelAssembler"/>
+    <fullyQualifiedTypeName name="uk.ac.man.cs.eventlite.dao.VenueService"/>
+    <fullyQualifiedTypeName name="org.mockito.Mock"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
+    <fullyQualifiedTypeName name="org.mockito.InjectMocks"/>
+    <fullyQualifiedTypeName name="uk.ac.man.cs.eventlite.entities.Event"/>
+    <fullyQualifiedTypeName name="org.assertj.core.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+</qualifiedTypeNameHistroy>
